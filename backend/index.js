@@ -7,3 +7,12 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
+
+app.get('/',(req,res)=>{
+    res.send('Working')
+})
+const port = process.env.PORT
+
+app.listen(port,()=>{
+    console.log(`connected to port ${port}`);
+})
