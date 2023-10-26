@@ -31,4 +31,35 @@ const AddNewBook=async(req,res)=>{
     }
 };
 
-const GetAllBooks=(req,res)=>{}
+// Route for getting all books from the database
+const GetAllBooks=async(req,res)=>{
+    try {
+        const books = await Book.find({});
+     
+    return res.status(200).json({
+        count: books.length,
+        data: books,
+      });
+    } catch (error) {
+        console.log(error.message);
+    }
+};
+
+// Getting a single book
+const GetBook=async(req,res)=>{
+    try {
+        const {id} = req.params
+
+        //Find a book by in the database by its ID
+        const book = await Book.findById(id);
+
+        return response.status(200).json(book)
+    } catch (error) {
+        console.log(error.message);
+        response.status(500).send({ message: error.message });
+    }
+};
+
+
+// Update a book in the database by ID
+const UpdateBook=async(req,res)=>{}
