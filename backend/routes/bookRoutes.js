@@ -4,8 +4,8 @@ import { AddNewBook, GetBook,
 
 const router = express.Router();
 
-router.post('/add', AddNewBook);
-router.get('/getallbooks',GetAllBooks);
+router.post('/', AddNewBook);
+router.get('/',GetAllBooks);
 router.get('/:id', GetBook);
 router.put('/:id',UpdateBook);
 router.delete('/:id', DeleteBook);
