@@ -1,35 +1,30 @@
 import express from "express";
 import { Book } from "../model/bookModel.js";
 
-const AddNewBook=async(req,res)=>{
+const AddNewBook=async(request,response)=>{
     try {
-        // Check if the required fields are provided
-        if(
-            !req.body.title || !req.body.author || req.body.publishYear
-
-        ){
-            return res.status(400).send({
-                message: 'Send all required fields: title, author, publishYear',
-              });
+        if (
+          !request.body.title ||
+          !request.body.author ||
+          !request.body.publishYear
+        ) {
+          return response.status(400).send({
+            message: 'Send all required fields: title, author, publishYear',
+          });
         }
-
-        //create a new book object based on req.body.
         const newBook = {
-            title: req.body.title,
-            author: req.body.author,
-            publishYear: req.body.publishYear,
-          };
-
-              // Create the book in the database using the Book model.
-    const book = await Book.create(newBook);
-
-    // Respond with the newly created book.
-    return res.status(201).send(book);
-
-    } catch (error) {
+          title: request.body.title,
+          author: request.body.author,
+          publishYear: request.body.publishYear,
+        };
+    
+        const book = await Book.create(newBook);
+    
+        return response.status(201).send(book);
+      } catch (error) {
         console.log(error.message);
-        res.status(500).send({ message: error.message });
-    }
+        response.status(500).send({ message: error.message });
+      }
 };
 
 // Route for getting all books from the database
