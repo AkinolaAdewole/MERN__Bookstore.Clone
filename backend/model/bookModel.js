@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 
-// Define the book schema using the mongoose.Schema function.
 const bookSchema = mongoose.Schema(
   {
     // Define the "title" field with a string data type and make it required.

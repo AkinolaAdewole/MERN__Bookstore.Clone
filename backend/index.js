@@ -17,7 +17,7 @@ app.get('/',(req,res)=>{
 });
 
 import bookRoutes from './routes/bookRoutes.js'
-app.use('/books')
+app.use('/books', bookRoutes);
 
 const port = process.env.PORT
 
