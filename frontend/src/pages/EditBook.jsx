@@ -22,7 +22,7 @@ const EditBook = () => {
 
     // Send a GET request to retrieve book details by ID
     axios
-      .get(`http://localhost:5555/books/${id}`)
+      .get(`http://localhost:3200/books/${id}`)
       .then((response) => {
         // Set the retrieved book details in the state
         setAuthor(response.data.author);
@@ -50,7 +50,7 @@ const EditBook = () => {
 
     // Send a PUT request to update the book details
     axios
-      .put(`http://localhost:5555/books/${id}`, data)
+      .put(`http://localhost:3200/books/${id}`, data)
       .then(() => {
         // Request successful: Set loading to false, show a success snackbar, and navigate to the home page
         setLoading(false);
@@ -67,7 +67,7 @@ const EditBook = () => {
 
   return (
     <>
-            <div className='p-4'>
+        <div className='p-4'>
                 <BackButton />
                 <h1 className='text-3xl my-4'>Edit Book</h1>
                 {loading ? <Spinner /> : ''}
@@ -103,7 +103,7 @@ const EditBook = () => {
                     Save
                     </button>
                 </div>
-            </div>
+        </div>
     </>
   )
 }
