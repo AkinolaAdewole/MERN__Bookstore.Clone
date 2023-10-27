@@ -16,7 +16,7 @@ const CreateBook = () => {
   // Access the routing functionality and the snack bar from React Router and notistack
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
-  
+
 
   // Function to handle saving a new book entry
   const handleSaveBook = () => {
@@ -49,7 +49,17 @@ const CreateBook = () => {
 
   return (
     <>
-
+      <div className='p-4'>
+            <BackButton />
+            <h1 className='text-3xl my-4'>Create Book</h1>
+            {loading ? <Spinner /> : ''}
+            <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>
+                {/* Input fields for book title, author, and publish year */}
+                {/* Update the state as the user types in the input fields */}
+                {/* A button to save the new book entry */}
+                {/* On button click, the handleSaveBook function is called */}
+            </div>
+       </div>
     </>
   )
 }
