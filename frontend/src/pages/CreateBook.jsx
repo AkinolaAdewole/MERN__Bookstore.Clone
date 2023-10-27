@@ -32,7 +32,7 @@ const CreateBook = () => {
 
     // Send a POST request to create a new book
     axios
-      .post('http://localhost:3200/books', data)
+      .post('http://localhost:3200/books/', data)
       .then(() => {
         // Request successful: Set loading to false, show a success snackbar, and navigate to the home page
         setLoading(false);
