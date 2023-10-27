@@ -6,6 +6,7 @@ const AddNewBook=async(req,res)=>{
         // Check if the required fields are provided
         if(
             !req.body.title || !req.body.author || req.body.publishYear
+
         ){
             return res.status(400).send({
                 message: 'Send all required fields: title, author, publishYear',
