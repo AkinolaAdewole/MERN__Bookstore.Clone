@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/',(req,res)=>{
-    res.send('Working')
+    res.send('Working! Server is ready')
 });
 
 import bookRoutes from './routes/bookRoutes.js'
