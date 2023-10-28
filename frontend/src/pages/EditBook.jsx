@@ -50,7 +50,7 @@ const EditBook = () => {
 
     // Send a PUT request to update the book details
     axios
-      .put(`http://localhost:3200/books/${id}`, data)
+      .put(`https://book-clone.vercel.app/books/${id}`, data)
       .then(() => {
         // Request successful: Set loading to false, show a success snackbar, and navigate to the home page
         setLoading(false);

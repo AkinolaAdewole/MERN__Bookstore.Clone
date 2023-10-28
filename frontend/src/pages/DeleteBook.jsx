@@ -24,7 +24,7 @@ const DeleteBook = () => {
 
     // Send a DELETE request to delete the specified book
     axios
-      .delete(`http://localhost:3200/books/${id}`)
+      .delete(`https://book-clone.vercel.app/books/${id}`)
       .then(() => {
         // Request successful: Set loading to false, show a success snackbar, and navigate to the home page
         setLoading(false);

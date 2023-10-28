@@ -32,7 +32,7 @@ const CreateBook = () => {
 
     // Send a POST request to create a new book
     axios
-      .post('http://localhost:3200/books/add', data)
+      .post('https://book-clone.vercel.app/books/add', data)
       .then(() => {
         // Request successful: Set loading to false, show a success snackbar, and navigate to the home page
         setLoading(false);

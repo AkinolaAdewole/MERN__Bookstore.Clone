@@ -18,7 +18,7 @@ const ShowBook = () => {
 
     // Send a GET request to retrieve book details by ID
     axios
-      .get(`http://localhost:3200/books/${id}`)
+      .get(`https://book-clone.vercel.app/books/${id}`)
       .then((response) => {
         // Set the retrieved book details in the state and set loading to false
         setBook(response.data);
